@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Dobrodosli u nas shop!</h1>
-</body>
-</html>
+@extends("layout")
+
+@section("naslov")
+Shop
+@endsection
+
+@section("sadrzajStranice")
+
+<div class="p-4 bg-light rounded shadow-sm">
+
+    <h2 class="text-primary mb-4">Shop</h2>
+
+    <p class="text-muted">Ovo je shop stranica</p>
+
+</div>
+
+@endsection

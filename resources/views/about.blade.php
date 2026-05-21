@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>O nama</h1>
-</body>
-</html>
+@extends("layout")
+
+@section("naslov")
+About
+@endsection
+
+@section("sadrzajStranice")
+
+<div class="p-4 bg-success text-white rounded shadow-sm">
+
+    <h2>About</h2>
+    <p>Ovo je about stranica</p>
+
+</div>
+
+@endsection
