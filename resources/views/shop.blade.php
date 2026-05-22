@@ -10,7 +10,14 @@ Shop
 
     <h2 class="text-primary mb-4">Shop</h2>
 
-    <p class="text-muted">Ovo je shop stranica</p>
+        @foreach($products as $product)
+            <h1>
+                {{ $product }}
+                @if(str_contains(mb_strtolower($product), 'šnicla'))
+                    - akcija
+                @endif
+            </h1>
+        @endforeach
 
 </div>
 

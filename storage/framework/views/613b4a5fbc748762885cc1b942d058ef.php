@@ -6,7 +6,6 @@
 
     <title><?php echo $__env->yieldContent("naslov"); ?></title>
 
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
@@ -20,7 +19,6 @@
 
     <?php echo $__env->make("footer", array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

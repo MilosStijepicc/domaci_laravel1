@@ -17,17 +17,17 @@ Contact
 
             <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control" placeholder="Unesite email">
+                <input type="email" class="form-control" name="email" placeholder="Unesite email">
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Subject</label>
-                <input type="text" class="form-control" placeholder="Tema poruke">
+                <input type="text" class="form-control" name="subject" placeholder="Tema poruke">
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Poruka</label>
-                <textarea class="form-control" rows="5" placeholder="Unesite poruku"></textarea>
+                <textarea class="form-control" rows="5" name="poruka" placeholder="Unesite poruku"></textarea>
             </div>
 
             <button class="btn btn-primary">Pošalji</button>
