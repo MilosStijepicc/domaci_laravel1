@@ -27,7 +27,7 @@ Contact
 
             <div class="mb-3">
                 <label class="form-label">Poruka</label>
-                <textarea class="form-control" rows="5" name="poruka" placeholder="Unesite poruku"></textarea>
+                <textarea class="form-control" rows="5" name="message" placeholder="Unesite poruku"></textarea>
             </div>
 
             <button class="btn btn-primary">Pošalji</button>

@@ -1,20 +1,72 @@
 @extends("layout")
+
 @section("naslov")
-Welcome
+    Početna
 @endsection
+
 @section("sadrzajStranice")
-<div class="alert alert-info">
 
-    @if($sat >= 0 && $sat <= 12)
-        <p> Dobro jutro !</p>
+    <div class="container mt-5">
 
-    @else
-        <p>Dobar dan!</p>
+        <div class="p-4 bg-light rounded shadow-sm mb-5">
 
-    @endif
+            <h1 class="text-primary">
+                Dobrodošli
+            </h1>
 
-    <p>Trenutno sati: {{ $sat }}</p>
-    <p>Trenutno vrijeme je {{ $trenutnoVrijeme }}</p>
-</div>
+            <p>
+                Trenutno vrijeme:
+                <strong>{{ $trenutnoVrijeme }}</strong>
+            </p>
+
+        </div>
+
+        <h2 class="mb-4 text-center">
+            Najnoviji proizvodi
+        </h2>
+
+        <div class="row">
+
+            @foreach($products as $product)
+
+                <div class="col-md-4 mb-4">
+
+                    <div class="card shadow h-100 border-0">
+
+                        <div class="card-body d-flex flex-column">
+
+                            <h3 class="card-title">
+                                {{ $product->name }}
+                            </h3>
+
+                            <p class="text-muted">
+                                {{ $product->description }}
+                            </p>
+
+                            <div class="mt-auto">
+
+                                <p class="mb-1">
+                                    <strong>Cijena:</strong>
+                                    {{ $product->price }} KM
+                                </p>
+
+                                <p class="mb-0">
+                                    <strong>Količina:</strong>
+                                    {{ $product->amount }}
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            @endforeach
+
+        </div>
+
+    </div>
 
 @endsection

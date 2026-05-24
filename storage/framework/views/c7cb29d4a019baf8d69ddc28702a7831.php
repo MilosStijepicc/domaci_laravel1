@@ -1,21 +1,76 @@
 
+
 <?php $__env->startSection("naslov"); ?>
-Welcome
+    Početna
 <?php $__env->stopSection(); ?>
+
 <?php $__env->startSection("sadrzajStranice"); ?>
-<div class="alert alert-info">
 
-    <?php if($sat >= 0 && $sat <= 12): ?>
-        <p> Dobro jutro !</p>
+    <div class="container mt-5">
 
-    <?php else: ?>
-        <p>Dobar dan</p>
+        <div class="p-4 bg-light rounded shadow-sm mb-5">
 
-    <?php endif; ?>
+            <h1 class="text-primary">
+                Dobrodošli
+            </h1>
 
-    <p>Trenutno sati: <?php echo e($sat); ?></p>
-    <p>Trenutno vrijeme je <?php echo e($trenutnoVrijeme); ?></p>
-</div>
+            <p>
+                Trenutno vrijeme:
+                <strong><?php echo e($trenutnoVrijeme); ?></strong>
+            </p>
+
+        </div>
+
+        <h2 class="mb-4 text-center">
+            Najnoviji proizvodi
+        </h2>
+
+        <div class="row">
+
+            <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                <div class="col-md-4 mb-4">
+
+                    <div class="card shadow h-100 border-0">
+
+                        <div class="card-body d-flex flex-column">
+
+                            <h3 class="card-title">
+                                <?php echo e($product->name); ?>
+
+                            </h3>
+
+                            <p class="text-muted">
+                                <?php echo e($product->description); ?>
+
+                            </p>
+
+                            <div class="mt-auto">
+
+                                <p class="mb-1">
+                                    <strong>Cijena:</strong>
+                                    <?php echo e($product->price); ?> KM
+                                </p>
+
+                                <p class="mb-0">
+                                    <strong>Količina:</strong>
+                                    <?php echo e($product->amount); ?>
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+        </div>
+
+    </div>
 
 <?php $__env->stopSection(); ?>
 
