@@ -8,6 +8,8 @@ class ProductsModel extends Model
 {
     protected $table = 'products';
 
+    public $timestamps = false;
+
     protected $fillable = [
         "name", "description", "amount", "price", "image"
     ];

@@ -69,4 +69,18 @@
 
     </div>
 
+
+    <form method="post" action="/send-contact">
+
+        @if($errors->any())
+            <p> Greska: {{ $errors->first() }}</p>
+        @endif
+
+        {{ csrf_field() }}
+        <input name="email" type="email" placeholder="Unesite vas email">
+        <input name="subject" type="text" placeholder="Unesite naslov poruke">
+        <textarea name="description" placeholder="Unesite vas poruku"> </textarea>
+        <button> Posalji poruku </button>
+    </form>
+
 @endsection

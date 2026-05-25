@@ -72,6 +72,21 @@
 
     </div>
 
+
+    <form method="post" action="/send-contact">
+
+        <?php if($errors->any()): ?>
+            <p> Greska: <?php echo e($errors->first()); ?></p>
+        <?php endif; ?>
+
+        <?php echo e(csrf_field()); ?>
+
+        <input name="email" type="email" placeholder="Unesite vas email">
+        <input name="subject" type="text" placeholder="Unesite naslov poruke">
+        <textarea name="description" placeholder="Unesite vas poruku"> </textarea>
+        <button> Posalji poruku </button>
+    </form>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make("layout", array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\Users\Korisnik\Desktop\domaci\resources\views/welcome.blade.php ENDPATH**/ ?>
