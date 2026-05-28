@@ -33,4 +33,15 @@ class ContactController extends Controller
 
         return redirect("/shop");
     }
+    public function deleteContact($contact)
+    {
+        $singleContact = ContactModel::where(['id' => $contact])->first();
+
+        if($singleContact == null)
+        {
+            die("OVAJ KONTAKT NE POSTOJI!");
+        }
+        $singleContact->delete();
+        return redirect()->back();
+    }
 }

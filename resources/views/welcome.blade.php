@@ -69,18 +69,83 @@
 
     </div>
 
+    <div class="container mb-5">
 
-    <form method="post" action="/send-contact">
+        <div class="card shadow border-0">
 
-        @if($errors->any())
-            <p> Greska: {{ $errors->first() }}</p>
-        @endif
+            <div class="card-body p-4">
 
-        {{ csrf_field() }}
-        <input name="email" type="email" placeholder="Unesite vas email">
-        <input name="subject" type="text" placeholder="Unesite naslov poruke">
-        <textarea name="description" placeholder="Unesite vas poruku"> </textarea>
-        <button> Posalji poruku </button>
-    </form>
+                <h2 class="mb-4 text-center text-primary">
+                    Kontakt forma
+                </h2>
+
+                @if($errors->any())
+
+                    <div class="alert alert-danger">
+                        Greška: {{ $errors->first() }}
+                    </div>
+
+                @endif
+
+                <form method="post" action="/send-contact">
+
+                    {{ csrf_field() }}
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Email adresa
+                        </label>
+
+                        <input
+                            name="email"
+                            type="email"
+                            class="form-control"
+                            placeholder="Unesite vaš email"
+                        >
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Naslov poruke
+                        </label>
+
+                        <input
+                            name="subject"
+                            type="text"
+                            class="form-control"
+                            placeholder="Unesite naslov poruke"
+                        >
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Poruka
+                        </label>
+
+                        <textarea
+                            name="description"
+                            class="form-control"
+                            rows="5"
+                            placeholder="Unesite vašu poruku"
+                        ></textarea>
+
+                    </div>
+
+                    <button class="btn btn-primary w-100">
+                        Pošalji poruku
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
 
 @endsection

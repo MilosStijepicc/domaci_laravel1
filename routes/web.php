@@ -13,3 +13,6 @@ Route::post("/send-contact", [\App\Http\Controllers\ContactController::class, 's
 Route::get("/admin/add-product", [\App\Http\Controllers\ShopController::class, 'addProduct']);
 Route::post("/admin/save-product", [\App\Http\Controllers\ShopController::class, 'saveProduct']);
 Route::get("/admin/products", [\App\Http\Controllers\ShopController::class, 'allProducts']);
+Route::get("/admin/all-products/", [\App\Http\Controllers\ProductsController::class, 'index']);
+Route::get("/admin/delete-product/{product}", [\App\Http\Controllers\ProductsController::class, 'deleteProduct']);
+Route::get("/admin/delete-contact/{contact}", [\App\Http\Controllers\ContactController::class, 'deleteContact']);
