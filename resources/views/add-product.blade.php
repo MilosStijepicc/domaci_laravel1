@@ -32,9 +32,9 @@
 
             @endif
 
-            <form action="/admin/save-product" method="POST">
+            <form action="{{route("saveProduct")}}" method="POST">
 
-                @csrf
+                {{ csrf_field() }}
 
                 <div class="mb-3">
 

@@ -38,8 +38,8 @@
 
                             <div class="mt-auto d-flex gap-2">
 
-                                <a href="/admin/edit-contact/{{ $allContact->id }}" class="btn btn-warning">
-                                    ✏️ Edituj
+                                <a href="/contacts/edit/{{ $allContact->id }}" class="btn btn-warning">
+                                    Edit
                                 </a>
 
                                 <a href="/admin/delete-contact/{{ $allContact->id }}" class="btn btn-danger">

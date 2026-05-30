@@ -39,8 +39,8 @@
 
                             <div class="mt-auto d-flex gap-2">
 
-                                <a href="/admin/edit-contact/<?php echo e($allContact->id); ?>" class="btn btn-warning">
-                                    ✏️ Edituj
+                                <a href="/contacts/edit/<?php echo e($allContact->id); ?>" class="btn btn-warning">
+                                    Edit
                                 </a>
 
                                 <a href="/admin/delete-contact/<?php echo e($allContact->id); ?>" class="btn btn-danger">

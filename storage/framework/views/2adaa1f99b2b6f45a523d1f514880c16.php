@@ -39,12 +39,12 @@
                                 </p>
                                 <div class="mt-3 d-flex gap-2">
 
-                                    <a href="/admin/delete-product/<?php echo e($product->id); ?>" class="btn btn-danger">
+                                    <a href="<?php echo e(route('deleteProduct', ['product' => $product->id])); ?>" class="btn btn-danger">
                                         Obriši
                                     </a>
 
-                                    <a href="/admin/edit-product" class="btn btn-success">
-                                        Dodaj
+                                    <a href="/products/edit/<?php echo e($product->id); ?>" class="btn btn-warning">
+                                        Edit
                                     </a>
 
                                 </div>

@@ -44,4 +44,24 @@ class ContactController extends Controller
         $singleContact->delete();
         return redirect()->back();
     }
+
+    public function edit($id)
+    {
+        $contact = ContactModel::findOrFail($id);
+
+        return view('edit-contact', compact('contact'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $contact = ContactModel::findOrFail($id);
+
+        $contact->email = $request->email;
+        $contact->subject = $request->subject;
+        $contact->message = $request->message;
+
+        $contact->save();
+
+        return redirect()->route('allContacts');
+    }
 }

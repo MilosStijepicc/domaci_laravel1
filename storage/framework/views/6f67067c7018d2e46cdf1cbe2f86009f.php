@@ -30,9 +30,10 @@
 
             <?php endif; ?>
 
-            <form action="/admin/save-product" method="POST">
+            <form action="<?php echo e(route("saveProduct")); ?>" method="POST">
 
-                <?php echo csrf_field(); ?>
+                <?php echo e(csrf_field()); ?>
+
 
                 <div class="mb-3">
 

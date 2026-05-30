@@ -23,7 +23,7 @@ class ShopController extends Controller
     public function saveProduct(Request $request)
     {
         $request->validate([
-            'name' => 'required|min:3|max:100',
+            'name' => 'required|min:3|max:100|unique:products',
             'description' => 'required|min:5',
             'amount' => 'required|integer|min:1',
             'price' => 'required|numeric|min:1'

@@ -23,6 +23,25 @@ class ProductsController extends Controller
 
         $singleProduct->delete();
 
-        return redirect()->back();
+        return redirect()->route('allProducts');
+    }
+
+    public function edit($id)
+    {
+        $product = ProductsModel::findOrFail($id);
+
+        return view('edit-product', compact('product'));
+    }
+    public function update(Request $request, $id)
+    {
+        $product = ProductsModel::findOrFail($id);
+
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->amount = $request->amount;
+        $product->price = $request->price;
+
+        $product->save();
+        return redirect()->route('allProducts');
     }
 }
