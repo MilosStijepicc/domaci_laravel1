@@ -38,11 +38,11 @@
 
                             <div class="mt-auto d-flex gap-2">
 
-                                <a href="/contacts/edit/{{ $allContact->id }}" class="btn btn-warning">
+                                <a href="{{ route('editContact', ['contact' => $allContact->id]) }}" class="btn btn-warning">
                                     Edit
                                 </a>
 
-                                <a href="/admin/delete-contact/{{ $allContact->id }}" class="btn btn-danger">
+                                <a href="{{ route('deleteContact', ['contact' => $allContact->id]) }}" class="btn btn-danger">
                                     🗑️ Obriši
                                 </a>
 

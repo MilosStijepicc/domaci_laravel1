@@ -26,16 +26,12 @@ class ProductsController extends Controller
         return redirect()->route('allProducts');
     }
 
-    public function edit($id)
+    public function edit(Request $request, ProductsModel $product)
     {
-        $product = ProductsModel::findOrFail($id);
-
         return view('edit-product', compact('product'));
     }
-    public function update(Request $request, $id)
+    public function update(Request $request, ProductsModel $product)
     {
-        $product = ProductsModel::findOrFail($id);
-
         $product->name = $request->name;
         $product->description = $request->description;
         $product->amount = $request->amount;

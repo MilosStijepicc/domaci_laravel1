@@ -4,8 +4,9 @@
 
         <h2>Edit Product</h2>
 
-        <form action="/products/update/<?php echo e($product->id); ?>" method="POST">
-            <?php echo csrf_field(); ?>
+        <form action="<?php echo e(route('updateProduct', ['product' => $product->id])); ?>" method="POST">
+            <?php echo e(csrf_field()); ?>
+
 
             <input type="text"
                    name="name"

@@ -2,7 +2,7 @@
 
 @section("sadrzajStranice")
 
-<form action="/contacts/update/{{$contact->id}}" method="POST">
+<form action="{{ route('updateContact', ['contact' => $contact->id]) }}" method="POST">
     {{ csrf_field() }}
 
     <input type="email"

@@ -39,11 +39,11 @@
 
                             <div class="mt-auto d-flex gap-2">
 
-                                <a href="/contacts/edit/<?php echo e($allContact->id); ?>" class="btn btn-warning">
+                                <a href="<?php echo e(route('editContact', ['contact' => $allContact->id])); ?>" class="btn btn-warning">
                                     Edit
                                 </a>
 
-                                <a href="/admin/delete-contact/<?php echo e($allContact->id); ?>" class="btn btn-danger">
+                                <a href="<?php echo e(route('deleteContact', ['contact' => $allContact->id])); ?>" class="btn btn-danger">
                                     🗑️ Obriši
                                 </a>
 
