@@ -15,7 +15,7 @@ Route::get("/contact", [\App\Http\Controllers\ContactController::class, 'index']
 Route::post("/send-contact", [\App\Http\Controllers\ContactController::class, 'sendContact'])
     ->name("sendContact");
 
-Route::middleware('auth')->prefix("admin")->group(function () {
+Route::middleware(["auth", \App\Http\Middleware\AdminCheckMiddleware::class])->prefix("admin")->group(function () {
 
     Route::get("/products", [\App\Http\Controllers\ShopController::class, 'allProducts']);
 
