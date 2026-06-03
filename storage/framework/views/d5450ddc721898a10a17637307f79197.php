@@ -13,7 +13,8 @@ Contact
 
         <h2 class="mb-3 text-primary">Kontaktiraj nas</h2>
 
-        <form>
+        <form action="<?php echo e(route('sendContact')); ?>" method="POST">
+            <?php echo csrf_field(); ?>
 
             <div class="mb-3">
                 <label class="form-label">Email</label>
@@ -27,11 +28,10 @@ Contact
 
             <div class="mb-3">
                 <label class="form-label">Poruka</label>
-                <textarea class="form-control" rows="5" name="message" placeholder="Unesite poruku"></textarea>
+                <textarea class="form-control" rows="5" name="description" placeholder="Unesite poruku"></textarea>
             </div>
 
             <button class="btn btn-primary">Pošalji</button>
-
         </form>
 
     </div>

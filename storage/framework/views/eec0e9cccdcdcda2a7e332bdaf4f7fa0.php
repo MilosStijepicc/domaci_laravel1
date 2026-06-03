@@ -1,6 +1,6 @@
 <?php $__env->startSection("sadrzajStranice"); ?>
 
-<form action="<?php echo e(route('updateContact', ['contact' => $contact->id])); ?>" method="POST">
+<form action="<?php echo e(route('updateContact', $contact)); ?>" method="POST">
     <?php echo e(csrf_field()); ?>
 
 

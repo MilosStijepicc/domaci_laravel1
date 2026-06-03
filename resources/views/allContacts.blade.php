@@ -38,7 +38,7 @@
 
                             <div class="mt-auto d-flex gap-2">
 
-                                <a href="{{ route('editContact', ['contact' => $allContact->id]) }}" class="btn btn-warning">
+                                <a href="{{ route('editContact', $allContact) }}" class="btn btn-warning">
                                     Edit
                                 </a>
 

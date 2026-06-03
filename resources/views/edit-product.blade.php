@@ -6,7 +6,7 @@
 
         <h2>Edit Product</h2>
 
-        <form action="{{ route('updateProduct', ['product' => $product->id]) }}" method="POST">
+        <form action="{{ route('updateProduct', $product) }}" method="POST">
             {{ csrf_field() }}
 
             <input type="text"

@@ -43,7 +43,7 @@
                                         Obriši
                                     </a>
 
-                                    <a href="<?php echo e(route('editProduct', ['product' => $product->id])); ?>" class="btn btn-warning">
+                                    <a href="<?php echo e(route('editProduct', $product)); ?>" class="btn btn-warning">
                                         Edit
                                     </a>
 

@@ -42,7 +42,7 @@
                                         Obriši
                                     </a>
 
-                                    <a href="{{ route('editProduct', ['product' => $product->id]) }}" class="btn btn-warning">
+                                    <a href="{{ route('editProduct', $product) }}" class="btn btn-warning">
                                         Edit
                                     </a>
 

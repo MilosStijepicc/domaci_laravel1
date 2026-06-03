@@ -39,7 +39,7 @@
 
                             <div class="mt-auto d-flex gap-2">
 
-                                <a href="<?php echo e(route('editContact', ['contact' => $allContact->id])); ?>" class="btn btn-warning">
+                                <a href="<?php echo e(route('editContact', $allContact)); ?>" class="btn btn-warning">
                                     Edit
                                 </a>
 
