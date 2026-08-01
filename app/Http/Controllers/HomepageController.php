@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\ProductsModel;
 use Illuminate\Http\Request;
-use function Illuminate\Support\hours;
 
 class HomepageController extends Controller
 {

@@ -2,14 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProductsModel;
-use Illuminate\Http\Request;
+use App\Http\Requests\SaveProductRequest;
+use App\Repositories\ProductRepository;
+
 
 class ShopController extends Controller
 {
+
+    private $productRepo;
+
+
+    public function __construct()
+    {
+        $this->productRepo = new ProductRepository();
+    }
+
+
     public function index()
     {
-        $products = ProductsModel::all();
+        $products = $this->productRepo->getAll();
 
         return view("shop", compact('products'));
     }
@@ -20,31 +31,23 @@ class ShopController extends Controller
         return view("add-product");
     }
 
-    public function saveProduct(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|min:3|max:100|unique:products',
-            'description' => 'required|min:5',
-            'amount' => 'required|integer|min:1',
-            'price' => 'required|numeric|min:1'
-        ]);
 
-        ProductsModel::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'amount' => $request->amount,
-            'price' => $request->price
-        ]);
+    public function saveProduct(SaveProductRequest $request)
+    {
+        $this->productRepo->createNew($request);
+
 
         return redirect('/admin/products')
-            ->with('success', 'Proizvod uspješno dodat!');
+            ->with('success','Proizvod uspješno dodat!');
     }
 
 
     public function allProducts()
     {
-        $products = ProductsModel::all();
+        $products = $this->productRepo->getAll();
+
 
         return view("products", compact('products'));
     }
+
 }
